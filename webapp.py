@@ -7,19 +7,19 @@ __copyright__ = "Copyright 2020, Michael Drews"
 __email__ = "michaelsdrews@gmail.com"
 
 
-import pandas as pd
 import numpy as np
 import streamlit as st
 import time
 import torch
 from models import *
 
+# set style
 with open("style.css") as f:
     st.markdown('<style>{}</style>'.format(f.read()), unsafe_allow_html=True)
 
 
+# load model
 checkpoint = torch.load('checkpoints/model_10_epochs.pth.tar')
-
 model = BasicVAE([256,128], 2)
 model.load_state_dict(checkpoint['state_dict'])
 
@@ -27,7 +27,6 @@ model.load_state_dict(checkpoint['state_dict'])
 ## Variational Autoencoder on Fashion MNIST
 ##
 '''
-
 
 '''
 Explore the latent space interactively:
@@ -61,6 +60,5 @@ sample = model.dec(z)#.cuda()
     
 image = torchvision.utils.make_grid(sample.reshape(N*N, 1, 28, 28), nrow=N)
 image = image.detach().cpu().numpy().swapaxes(0,2).swapaxes(1,0)
-
 
 st.image(image, width=600)

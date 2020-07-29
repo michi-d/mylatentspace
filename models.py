@@ -5,7 +5,6 @@ from torch.nn import functional as F
 from torch.utils.tensorboard import SummaryWriter
 from torch.utils.data import SubsetRandomSampler, DataLoader
 import torchvision
-import numpy as np
 
 class BasicEncoder(nn.Module):
     """Encoder for the basic model (two dense layers)
