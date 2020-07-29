@@ -2,7 +2,6 @@ import torch
 from torch import nn
 from torch.optim import SGD, Adam
 from torch.nn import functional as F
-from torch.utils.tensorboard import SummaryWriter
 from torch.utils.data import SubsetRandomSampler, DataLoader
 import torchvision
 
