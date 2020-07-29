@@ -1,5 +1,5 @@
 
-"""Streamlit WebApp to visualize basic statistics
+"""Streamlit WebApp to visualize VAE latent spaces
 """
 
 __author__ = "Michael Drews"
