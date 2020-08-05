@@ -28,6 +28,8 @@ model.load_state_dict(checkpoint['state_dict'])
 ##
 '''
 
+st.image('assets/vae.png', width=400)
+
 '''
 Explore the latent space interactively:
 '''
